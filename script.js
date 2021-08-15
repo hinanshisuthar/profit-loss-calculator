@@ -4,6 +4,7 @@ var sellingPrice = document.querySelector("#selling-price");
 var checkBtn = document.querySelector("#check-btn");
 var result  = document.querySelector("#result");
 var inputDiv = document.querySelector("#input-div");
+var headIng = document.querySelector(".heading");
 
 checkBtn.addEventListener('click',clickHandler);
 
@@ -16,7 +17,8 @@ function clickHandler(){
         var profitPercent = (profit / totalBuyingPrice) * 100 ;
          result.innerText = "Hey! this trade was profitable. You earned " + profitPercent + "% profit. Which is total Rs. " + profit + "." 
          if(profit > 50){
-           inputDiv.style.backgroundColor = "blue"
+           headIng.style.color = "#65A30D";
+           result.style.color = "#65A30D";
          }  
      }
      else  if(totalBuyingPrice > totalSellingPrice){
@@ -25,7 +27,8 @@ function clickHandler(){
          result.innerText = "Hey! this trade was not profitable."
         + " And you lost " + lossPercent + "% . Which is total Rs. " + loss + "." 
          if(lossPercent > 50){
-            inputDiv.style.backgroundColor = "red"
+            headIng.style.color = "#DC2626";
+            result.style.color = "#DC2626"
          }
      }
      else{
@@ -33,6 +36,6 @@ function clickHandler(){
      }
     }
  else{
-     result.innerText = "Bhai bina input k kuch nhi hoga"
+     result.innerText = "Are you trying to fool me here -_- ?"
  }
 }
