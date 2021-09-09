@@ -1,3 +1,4 @@
+//referencing HTML elements
 var buyingPrice = document.querySelector("#buying-price");
 var stockVolume = document.querySelector("#stock-volume");
 var sellingPrice = document.querySelector("#selling-price");
@@ -6,7 +7,7 @@ var result  = document.querySelector("#result");
 var inputDiv = document.querySelector("#input-div");
 var headIng = document.querySelector(".heading");
 
-checkBtn.addEventListener('click',clickHandler);
+checkBtn.addEventListener('click',clickHandler); //listen to click event
 
 function clickHandler(){
   if(Number(buyingPrice.value) != 0 && ( Number(stockVolume.value) != 0 &&  Number(sellingPrice.value) != 0)){
@@ -32,7 +33,7 @@ function clickHandler(){
          }
      }
      else{
-         result.innerText = "This trade was neither Profitable nor Lossy."
+         result.innerText = "This trade was neither Profitable nor Lossy-making."
      }
     }
  else{
