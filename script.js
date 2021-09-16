@@ -10,7 +10,7 @@ var headIng = document.querySelector(".heading");
 checkBtn.addEventListener('click',clickHandler); //listen to click event
 
 function clickHandler(){
-  if(Number(buyingPrice.value) != 0 && ( Number(stockVolume.value) != 0 &&  Number(sellingPrice.value) != 0)){
+  if(Number(buyingPrice.value) > 0 && ( Number(stockVolume.value) > 0 &&  Number(sellingPrice.value) > 0)){
     var totalBuyingPrice = Number(buyingPrice.value) * Number(stockVolume.value);
      var totalSellingPrice = Number(sellingPrice.value) * Number(stockVolume.value);
      if(totalBuyingPrice < totalSellingPrice){
@@ -22,7 +22,7 @@ function clickHandler(){
            result.style.color = "#65A30D";
          }  
      }
-     else  if(totalBuyingPrice > totalSellingPrice){
+     else if(totalBuyingPrice > totalSellingPrice){
          var loss = totalBuyingPrice - totalSellingPrice;
          var lossPercent = ( loss/totalBuyingPrice)*100;
          result.innerText = "Hey! this trade was not profitable."
@@ -37,6 +37,6 @@ function clickHandler(){
      }
     }
  else{
-     result.innerText = "Are you trying to fool me here -_- ?"
+     result.innerText = "Are you trying to fool me here -_- ? Enter values greater than 0"
  }
 }
